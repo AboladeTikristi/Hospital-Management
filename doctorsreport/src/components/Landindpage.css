@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Teko:wght@300;400;500;600;700&family=Water+Brush&display=swap');
+
+.imgslider{
+    animation: slider 16s ease-in-out infinite;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@keyframes slider{
+    0%,100%{
+        background-image: url('../assets/d2.jpg');
+    }
+    25%{
+        background-image: url('../assets/d3.jpg');
+    }
+    50%{
+        background-image: url('../assets/doctors.jpg');
+    }
+    75%{
+        background-image: url('../assets/doct.jpg');
+    }
+}
+.secondCard{
+    background-image: url('../assets/d2.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+.smallImg{
+    border: thick solid white;
+    border-radius: 50%;
+}
+.thirdCard{
+    display: grid;
+    justify-content: center;
+    margin-top: 5rem;
+}
+.cardP{
+    display: flex;
+    justify-content: center;
+}
+.cardP2{
+   margin-left: '2rem';
+}
+.typo{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.hero{
+background: rgba(51,63,227,0);
+-webkit-backdrop-filter: blur(5px);
+backdrop-filter: blur(5px);
+border: 1px solid rgba(51,63,227,0);
+}
+.docPat{
+    background: rgba(255,255,255,0.55);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.275);
+}
+.user{
+    background-image: url('../assets/happy.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+}
+.signature{
+    font-family: 'Water Brush', cursive;
+}
+.location{
+    background-image: url('../assets/map.png');
+    background-position: center;
+    background-size: contain;
+}
