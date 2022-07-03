@@ -4,6 +4,7 @@ import Navbar from '../components/Navbar'
 import illustrator from '../assets/hostpital.png'
 import { Box, Typography } from '@mui/material'
 import { TextField } from '@mui/material'
+import{Link} from 'react-router-dom'
 import { Button, AppBar, Toolbar } from '@mui/material'
 
 const myStyle = {
@@ -22,8 +23,8 @@ const myStyle2 ={
 const Login = () => {
     return (
         <>
-            {/* <Navbar /> */}
-            {/* <Grid container  style={{ backgroundColor: `${myStyle}`,}} sx={{display:{xs:'none',sm:'flex'}}}>
+            <Navbar />
+            <Grid container  style={{ backgroundColor: `${myStyle}`,}} sx={{display:{xs:'none',sm:'flex'}}}>
                 <Grid item sm={6} sx={{ backgroundImage: `url(${illustrator})`, backgroundPosition: 'center center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', height: { sm: '55rem', lg: '60rem' }, width: '100%', borderBottomRightRadius: '100px' }} >
 
                 </Grid>
@@ -57,19 +58,19 @@ const Login = () => {
                                <button style={{width:'100%',marginTop:'2rem',paddingTop:'.5rem',paddingBottom:'.5rem'}}>Login</button>
                             </form>
                            <Typography variant="body1" color="initial" sx={{fontSize:'1.3rem', mt:1}}>forgot password ?</Typography>
-                           <Typography variant="body1" color="initial" sx={{fontSize:'1.3rem', mt:1}}>Don't have an account? SignUp</Typography>
+                          <Link to='/signup'> <Typography variant="body1" color="initial" sx={{fontSize:'1.3rem', mt:1}}>Don't have an account? SignUp</Typography></Link>
 
                         </Grid>
                     </Grid>
                 </Grid>
-            </Grid> */}
-            <Grid container sx={{backgroundImage: `url(${illustrator})`,backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', width:'100%',height:{xs:'50rem',md:'none'},display:{xs:'flex',md:'none'},justifyContent:"center",alignItems:'center'}}>
+            </Grid> 
+             {/* <Grid container sx={{backgroundImage: `url(${illustrator})`,backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', width:'100%',height:{xs:'50rem',md:'none'},display:{xs:'flex',md:'none'},justifyContent:"center",alignItems:'center'}}>
                 <Grid item xs={12} sm={8} sx={{backgroundColor:`${myStyle2}`}}>
                     <Typography variant="subtitle1" color="initial">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco Lorem ipsum dolor sit amet, consectetur
                     </Typography>
                 </Grid>
-            </Grid>
+            </Grid> */}
         </>
     )
 }

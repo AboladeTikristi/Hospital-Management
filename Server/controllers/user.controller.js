@@ -11,7 +11,7 @@ cloudinary.config({
 const LandingPage=(res,req)=>{
     res.send("I am here o")
 }
-const Signup=()=>{
+const Signup=(req,res)=>{
     const newUser=req.body;
     console.log(req.body)
     if (req.body!==""){
@@ -28,15 +28,6 @@ const Signup=()=>{
                     res.send({message:'email already exist',status:false})
                 }
                 else{
-                    userModel.findOne({username:username},(err,result)=>{
-                        if (err) {
-                            res.status(501).send({message:'Internal server error',status:false})
-                        }
-                        else{
-                            if(result){
-                                res.send({message:'username already exist',status:false})
-                            }
-                            else{
                     const form= new userModel(newUser)
                         form.save((err,result)=>{
                         if (err) {
@@ -48,18 +39,18 @@ const Signup=()=>{
                             res.send({message:"registration successful",status:true})
                         }
                     })
+                    
                     }
-                    }
-                })
+               
                  
                 }
                 
                 
-            }
+            
         })
     }
 }
-const Login=()=>{
+const Login=(req,res)=>{
     const logUser=req.body;
     console.log(req.body)
     const email=req.body.email

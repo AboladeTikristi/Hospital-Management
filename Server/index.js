@@ -7,7 +7,7 @@ app.use(bodyParser.json({limit:"50mb"}))
 const cors=require('cors')
 app.use(cors())
 const mongoose=require("mongoose")
-const URI="mongodb+srv://AboladeTikristi:tikristi@cluster0.8i7iv.mongodb.net/hospital_management?retryWrites=true&w=majority"
+const URI=`mongodb+srv://AboladeTikristi:tikristi@cluster0.8i7iv.mongodb.net/hospital_management?retryWrites=true&w=majority`
 require('dotenv').config()
 const PORT=process.env.PORT||5006
 const userRouter=require("./routes/user.route")

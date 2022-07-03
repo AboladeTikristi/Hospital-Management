@@ -3,7 +3,6 @@ const bcrypt =require('bcryptjs');
 const userSchema=mongoose.Schema({
     firstname:String,
     lastname:String,
-    username:String,
     email:String,
     profile_picture:String,
     password:String,
