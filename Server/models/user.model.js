@@ -22,7 +22,7 @@ userSchema.pre('save',function(next){
         }
     })
 })
-userSchema.methods.validatePassword=function(password,callback){
+userSchema.methods.validatePassword = function(password,callback){
     console.log(this)
     console.log(password)
     bcrypt.compare(password,this.password,(err,same)=>{
@@ -36,5 +36,4 @@ userSchema.methods.validatePassword=function(password,callback){
 }
 
 const userModel=mongoose.model('user_tb',userSchema)
-
 module.exports=userModel
