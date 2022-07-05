@@ -5,8 +5,12 @@ import illustrator from '../assets/hostpital.png'
 import { Box, Typography } from '@mui/material'
 import { TextField } from '@mui/material'
 import{Link} from 'react-router-dom'
+import {useFormik} from 'formik'
+import axios from 'axios'
+import * as yup from 'yup'
 import { Button, AppBar, Toolbar } from '@mui/material'
-
+import {useState} from 'react'
+import {useNavigate} from 'react-router-dom'
 const myStyle = {
     background: 'rgb(116,200,189)',
     '-webkit-backdrop-filter': 'blur(10px)',
@@ -21,6 +25,37 @@ const myStyle2 ={
 }
 
 const Login = () => {
+    const url = "http://localhost:5008/login"
+    // const navigate = useNavigate()
+  const [message, setmessage] = useState("")
+  const [status, setstatus] = useState("")
+  const navigate = useNavigate()
+  const formik = useFormik({
+    initialValues:{
+      email:'',
+      password:''
+    },
+    onSubmit:(values)=>{
+      console.log(values)
+      const userDetails = values;
+      axios.post(url, userDetails).then((res) => {
+        console.log(res)
+        setstatus(true)
+        if (res.data.status === true) {
+          localStorage.token = res.data.token
+          setmessage(res.data.message)
+          alert('login successful')
+          navigate('/dashboard')
+          // alert(`hey`)
+        }
+      })
+    },
+    validationSchema: yup.object({
+      email: yup.string().required('Required field'),
+      password: yup.string().required('Required field'),
+
+  })
+  })
     return (
         <>
             <Navbar />
@@ -34,9 +69,12 @@ const Login = () => {
                             <Typography variant="h3" color="initial" sx={{ display: 'flex', justifyContent: 'center', width: '100%', fontWeight: 500 }}>
                                 LOGIN
                             </Typography>
-                            <form >
+                            <form onSubmit={formik.handleSubmit}>
                                 <TextField
                                     id="standard-error-helper-text"
+                                    onBlur={formik.handleBlur} 
+                                    onChange={formik.handleChange}
+                                    name='email'
                                     label="Email"
                                     defaultValue=""
                                     helperText="Incorrect entry."
@@ -47,6 +85,9 @@ const Login = () => {
                                 />
                                 <TextField
                                     id="standard-error-helper-text"
+                                    onBlur={formik.handleBlur} 
+                                    onChange={formik.handleChange}
+                                    name='password'
                                     label="Password"
                                     defaultValue=""
                                     helperText="Incorrect entry."
@@ -55,11 +96,10 @@ const Login = () => {
                                     inputProps={{style: {fontSize: 20,color:'white'}}}
                                     InputLabelProps={{style: {fontSize: 20,color:'white'}}}
                                 />
-                               <button style={{width:'100%',marginTop:'2rem',paddingTop:'.5rem',paddingBottom:'.5rem'}}>Login</button>
+                               <button type='submit' style={{width:'100%',marginTop:'2rem',paddingTop:'.5rem',paddingBottom:'.5rem'}}>Login</button>
                             </form>
                            <Typography variant="body1" color="initial" sx={{fontSize:'1.3rem', mt:1}}>forgot password ?</Typography>
-                          <Link to='/signup'> <Typography variant="body1" color="initial" sx={{fontSize:'1.3rem', mt:1}}>Don't have an account? SignUp</Typography></Link>
-
+                          <Link to='/signup'> <Typography variant="body1" color="initial" sx={{fontSize:'1.3rem', mt:1}}>Don't have an account? Signup</Typography></Link>
                         </Grid>
                     </Grid>
                 </Grid>

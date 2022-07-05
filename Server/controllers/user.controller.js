@@ -1,4 +1,4 @@
-const userModel=require('../models/user.model')
+const userModel = require('../models/user.model')
 const cloudinary=require('cloudinary');
 const SECRET=process.env.JWT_SECRET;
 const jwt=require('jsonwebtoken')
@@ -39,50 +39,38 @@ const Signup=(req,res)=>{
                             res.send({message:"registration successful",status:true})
                         }
                     })
-                    
                     }
-               
-                 
                 }
-                
-                
-            
         })
     }
 }
 const Login=(req,res)=>{
-    const logUser=req.body;
-    console.log(req.body)
-    const email=req.body.email
-    const password=req.body.password
-    userModel.findOne({email:email},(err,user)=>{
-        if (err) {
-            res.send({message:'server error',status:false})
-        }
-        else{
-            if (!user) {
-                res.send({message:'unrecognized email',staus:false})
-            }
-            else{
-                user.validatePassword(password,(err,same)=>{
-                 if (err) {
-                     console.log(`an error occured`)
-                 }  
-                 else{
-                     if(same){
-                         const token=jwt.sign({email},SECRET,{expiresIn:'12h'})
-                         console.log(token)
-                          res.send({message:'correct password',status:true,token})
-                     }
-                     else{
-                         res.send({message:'invalid password',status:false})
-                     }
-                     
-                    console.log(same)
-                } 
+    console.log('heeee')
+    const password =req.body.password
+    const email =req.body.email
+    userModel.findOne({email:email},(err,result)=>{
+        if(err){
+            res.status(501).send({message:"Server Eror",status:false})
+        }else{
+            if(!result){
+                res.send({message:"Error",status:false})  
+            }else{
+                result.validatePassword(password,(err,same)=>{
+                    if(err){
+                        console.log(error)
+                        console.log(`error dey`)
+                    }else{
+                        if(same){
+                            const token = jwt.sign({email},SECRET,{expiresIn:"7h"})
+                            console.log(token)
+                            res.send({message:"Correct Password",status:true,token})
+                        }else{
+                            res.send({message:"Invalid Password",status:false})
+                        }
+                    }
                 })
             }
         }
-        })
+    })
 }
 module.exports={LandingPage,Signup,Login}
