@@ -6,7 +6,7 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import PhoneIphoneIcon from '@mui/icons-material/PhoneIphone';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Typography, Box, InputBase} from '@mui/material';
-import { NavLink } from 'react-router-dom'
+import { NavLink,Link } from 'react-router-dom'
 import SearchIcon from '@mui/icons-material/Search';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
@@ -83,7 +83,7 @@ const Navbar = () => {
 
             <Grid container sx={{ display: { xs: 'none', md: 'flex' }, height: '6rem', alignItems: 'center', justifyContent: 'center', borderTop: 2, borderColor: '#efefef', backgroundColor: 'white' }} data-spy="affix" data-offset-top="70">
                 <Grid item md={6} lg={6} sx={{ display: 'flex' }}>
-                    <NavLink to="" style={{ textDecoration: "none", color: 'black' }}><LI sx={{ p: '1.1rem' }}><b >HOME</b></LI></NavLink>
+                    <NavLink to="/" style={{ textDecoration: "none", color: 'black' }}><LI sx={{ p: '1.1rem' }}><b >HOME</b></LI></NavLink>
                     <NavLink to="" style={{ textDecoration: "none", color: 'black' }}><LI sx={{ p: '1.1rem' }}><b >ABOUT US</b></LI></NavLink>
                     <NavLink to="" style={{ textDecoration: "none", color: 'black' }}><LI sx={{ p: '1.1rem' }}><b >PAGES</b></LI></NavLink>
                     <NavLink to="" style={{ textDecoration: "none", color: 'black' }}><LI sx={{ p: '1.1rem' }}><b >BLOG/NEWS</b></LI></NavLink>

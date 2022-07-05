@@ -9,18 +9,18 @@ import { Button, AppBar, Toolbar } from '@mui/material'
 
 const myStyle = {
     background: 'rgb(116,200,189)',
-    WebkitBackdropFilter: 'blur(10px)',
+    '-webkit-backdrop-filter': 'blur(10px)',
     backdropFilter: ' blur(10px)',
     border: '1px solid rgba(26,100,213,0.25)'
 }
 const myStyle2 ={
     background: "rgba(116,210,204,0.55)",
-    WebkitBackdropFilter: "blur(8px)",
-    backdropFilter: "blur(8px)",
-    border: '1px solid rgba(116,210,204,0.275)'
+  "-webkit-backdrop-filter": "blur(8px)",
+  backdropFilter: "blur(8px)",
+  border: '1px solid rgba(116,210,204,0.275)'
 }
 
-const Login = () => {
+const DoctorLogin = () => {
     return (
         <>
             <Navbar />
@@ -32,7 +32,7 @@ const Login = () => {
                     <Grid container sx={{ backgroundColor: 'white', width: '100%', height: '100%', borderTopLeftRadius: '100px', justifyContent: 'center', alignItems: 'center' }}>
                         <Grid item sm={8} style={myStyle} sx={{p:5}}>
                             <Typography variant="h3" color="initial" sx={{ display: 'flex', justifyContent: 'center', width: '100%', fontWeight: 500 }}>
-                                PATIENT'S LOGIN
+                                DOCTOR'S LOGIN
                             </Typography>
                             <form >
                                 <TextField
@@ -58,7 +58,7 @@ const Login = () => {
                                <button style={{width:'100%',marginTop:'2rem',paddingTop:'.5rem',paddingBottom:'.5rem'}}>Login</button>
                             </form>
                            <Typography variant="body1" color="initial" sx={{fontSize:'1.3rem', mt:1}}>Forgot password ?</Typography>
-                          <Link to='/signup'> <Typography variant="body1" color="initial" sx={{fontSize:'1.3rem', mt:1}}>Don't have an account? SignUp</Typography></Link>
+                          <Link to='/docsignup'> <Typography variant="body1" color="initial" sx={{fontSize:'1.3rem', mt:1}}>Don't have an account? SignUp</Typography></Link>
 
                         </Grid>
                     </Grid>
@@ -75,4 +75,4 @@ const Login = () => {
     )
 }
 
-export default Login
+export default DoctorLogin

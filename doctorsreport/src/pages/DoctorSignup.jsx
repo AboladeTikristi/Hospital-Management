@@ -1,7 +1,7 @@
 import { Grid,Typography,TextField } from '@mui/material'
 import React,{useState} from 'react'
 import Navbar from '../components/Navbar'
-import illustrator from '../assets/patient.jpg'
+import illustrator from '../assets/hostpital.png'
 import {Routes,Route,Navigate,useNavigate,Link} from 'react-router-dom'
 import axios from 'axios'
 import { useFormik } from 'formik'
@@ -14,9 +14,9 @@ const myStyle ={
     border: '1px solid rgba(26,100,213,0.25)'
 }
 
-const Signup = () => {
+const DoctorSignup = () => {
     const navigate = useNavigate()
-    const url='http://localhost:5008/signup'
+    const url='http://localhost:5008/docsignup'
      const [status, setstatus] = useState("")
      const [message, setmessage] = useState("")
      const formik=useFormik({
@@ -25,9 +25,10 @@ const Signup = () => {
            lastname:'',
            email:'',
            password:'',
- 
+        
        },
        onSubmit:(values)=>{
+        console.log("here")
             console.log(formik.initialValues)
              setmessage("load")
              console.log(values)
@@ -37,7 +38,7 @@ const Signup = () => {
                      setstatus(true)
                      if (res.data.status===true) {
                         setstatus(true)
-                        navigate('/login')
+                        navigate('/doclogin')
                      }
                      else{
                        setstatus(false)
@@ -62,13 +63,14 @@ const Signup = () => {
             </Grid> */}
             <Grid item sm={5} style={myStyle} sx={{p:5,opacity:0.95}}>
                             <Typography variant="h3" color="initial" sx={{ display: 'flex', justifyContent: 'center', width: '100%', fontWeight: 500 }}>
-                               PATIENT SIGNUP
+                               DOCTOR'S SIGNUP
                             </Typography>
                             {/* output message */}
                             {message==="load"? 
                             <div class="spinner-border text-danger" role="status">
-                            <span class="sr-only">Loading...</span>
-                            </div>:<div class="text-primary fw-bold text-uppercase">{message}</div>}
+                                <span class="sr-only">Loading...</span>
+                            </div>:
+                            <div class="text-primary fw-bold text-uppercase">{message}</div>}
                             <form onSubmit={formik.handleSubmit}>
                                 <TextField
                                     id="standard-error-helper-text"
@@ -117,16 +119,16 @@ const Signup = () => {
                                     onChange={formik.handleChange}
                                     label="Password"
                                     defaultValue=""
-                                    helperText={formik.touched.password?<span class="text-danger h6">{formik.errors.password}</span>:''}
+                                    helperText={formik.touched.password?<span className="text-danger h6">{formik.errors.password}</span>:''}
                                     variant="standard"
-                                    sx={{width:'100%'}}
                                     type="password"
+                                    sx={{width:'100%'}}
                                     inputProps={{style: {fontSize: 20,color:'white'}}}
                                     InputLabelProps={{style: {fontSize: 20,color:'white'}}}
                                 />
                                <button type="submit" style={{width:'100%',marginTop:'2rem',paddingTop:'.5rem',paddingBottom:'.5rem'}}>Signup</button>
                             </form>
-                           <Link to='/login'><Typography variant="body1" color="initial" sx={{fontSize:'1.3rem', mt:1}}>Already have an account? Login</Typography></Link>
+                           <Link to='/doclogin'><Typography variant="body1" color="initial" sx={{fontSize:'1.3rem', mt:1}}>Already have an account? Login</Typography></Link>
 
                         </Grid>
         </Grid>
@@ -134,4 +136,4 @@ const Signup = () => {
   )
 }
 
-export default Signup
+export default DoctorSignup

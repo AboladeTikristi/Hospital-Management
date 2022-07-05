@@ -8,14 +8,13 @@ cloudinary.config({
     api_secret:process.env.API_SECRET 
   });
 
-const Signup=()=>{
+const Signup=(req,res)=>{
     const newUser=req.body;
     console.log(req.body)
     if (req.body!==""){
      const email=req.body.email;
      const username=req.body.username;
-    
-   
+ 
     doctorModel.findOne({email:email},(err,result)=>{
             if (err) {
                 res.status(501).send({message:'Internal server error',status:false})
@@ -25,15 +24,6 @@ const Signup=()=>{
                     res.send({message:'email already exist',status:false})
                 }
                 else{
-                    doctorModel.findOne({username:username},(err,result)=>{
-                        if (err) {
-                            res.status(501).send({message:'Internal server error',status:false})
-                        }
-                        else{
-                            if(result){
-                                res.send({message:'username already exist',status:false})
-                            }
-                            else{
                     const form= new doctorModel(newUser)
                         form.save((err,result)=>{
                         if (err) {
@@ -45,11 +35,9 @@ const Signup=()=>{
                             res.send({message:"registration successful",status:true})
                         }
                     })
+                    
                     }
-                    }
-                })
-                 
-                }
+               
                 
                 
             }

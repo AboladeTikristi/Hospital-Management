@@ -18,7 +18,7 @@ const Signup=(req,res)=>{
      const email=req.body.email;
      const username=req.body.username;
     
-   
+    
     userModel.findOne({email:email},(err,result)=>{
             if (err) {
                 res.status(501).send({message:'Internal server error',status:false})

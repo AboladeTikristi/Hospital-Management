@@ -14,6 +14,7 @@ import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import AddIcCallOutlinedIcon from '@mui/icons-material/AddIcCallOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import Navbar from './Navbar'
+import {Routes,Route,Navigate,useNavigate,Link} from 'react-router-dom'
 
 const LandingPage = () => {
     return (
@@ -36,11 +37,13 @@ const LandingPage = () => {
                                 <Box sx={{ ml: 2 }}>
                                     <b style={{ color: 'black' }} className='docPat'>FOR PATIENTS</b>
                                     <p>Lorem ipsum dolor sit amet, consec</p>
-                                    <Button variant="contained" sx={{ width: '100%', backgroundColor: 'white', mt: 1 }}>
-                                        <b style={{ color: 'black' }}>
-                                            Login
-                                        </b>
-                                    </Button>
+                                    <Link className='text-decoration-none' to="/login">
+                                        <Button variant="contained" sx={{ width: '100%', backgroundColor: 'white', mt: 1 }}>
+                                            <b style={{ color: 'black' }}>
+                                                Login
+                                            </b>
+                                        </Button>
+                                    </Link>
 
                                     {/* <i>Already a member, please</i> <button>login</button> */}
                                 </Box>
@@ -50,11 +53,13 @@ const LandingPage = () => {
                                 <Box sx={{ ml: 2 }}>
                                     <b style={{ color: 'black' }} className='docPat'>FOR DOCTORS</b>
                                     <p>Lorem ipsum dolor sit amet, consec</p>
-                                    <Button variant="contained" sx={{ width: '100%', backgroundColor: 'white', mt: 1 }}>
-                                        <b style={{ color: 'black' }}>
-                                            Login
-                                        </b>
-                                    </Button>
+                                    <Link className='text-decoration-none'to="/doclogin">
+                                        <Button variant="contained" sx={{ width: '100%', backgroundColor: 'white', mt: 1 }}>
+                                            <b style={{ color: 'black' }}>
+                                                Login
+                                            </b>
+                                        </Button>
+                                    </Link>
 
                                     {/* <i>Already a member, please</i> <button>login</button> */}
                                 </Box>
