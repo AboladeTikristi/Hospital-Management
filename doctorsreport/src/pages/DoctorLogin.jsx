@@ -38,6 +38,8 @@ const DoctorLogin = () => {
       password:''
     },
     onSubmit:(values)=>{
+      // console.log(formik.initialValues)
+      setmessage("load")
       console.log(values)
       const userDetails = values;
       axios.post(url, userDetails).then((res) => {
@@ -70,6 +72,11 @@ const DoctorLogin = () => {
                             <Typography variant="h3" color="initial" sx={{ display: 'flex', justifyContent: 'center', width: '100%', fontWeight: 500 }}>
                                 DOCTOR'S LOGIN
                             </Typography>
+                            {message==="load"? 
+                            <div class="spinner-border text-danger" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>:
+                            <div class="text-primary fw-bold text-uppercase">{message}</div>}
                             <form onSubmit={formik.handleSubmit}>
                                 <TextField
                                     id="standard-error-helper-text"
