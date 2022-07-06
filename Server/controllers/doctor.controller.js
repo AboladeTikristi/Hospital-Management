@@ -44,7 +44,7 @@ const Signup=(req,res)=>{
         })
     }
 }
-const Login=()=>{
+const Login=(req,res)=>{
     const logUser=req.body;
     console.log(req.body)
     const email=req.body.email

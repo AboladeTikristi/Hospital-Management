@@ -45,8 +45,7 @@ const Login = () => {
           localStorage.token = res.data.token
           setmessage(res.data.message)
           alert('login successful')
-          navigate('/dashboard')
-          // alert(`hey`)
+          alert(`hey`)
         }
       })
     },
