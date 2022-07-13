@@ -3,8 +3,8 @@ const Profile = () => {
 
     return (
         <>
-            <main className="w-100 d-flex align-items-center justify-content-center mt-3" style={{ height: "86vh" }}>
-                <div className="card mx-3" style={{ width: "30%", borderRadius: "10px", height: "100%" }}>
+            <main className="w-100 d-flex align-items-center justify-content-center mt-3 container" style={{ height: "86vh" }} id="mainProfile">
+                <div className="card mx-3 " style={{ width: "30%", borderRadius: "10px", height: "100%" }} id="subProfile1">
                     <div style={{ width: "100%", display: "flex", justifyContent: "center", borderRadius: "10px" }} className="py-3 bg bg-primary">
                         <img src={drJuice} alt="" style={{ width: "50%", height: "160px", borderRadius: "100%" }} />
                     </div>
@@ -22,7 +22,7 @@ const Profile = () => {
                     </div>
 
                 </div>
-                <div className="card mx-3" style={{ width: "70%", borderRadius: "10px", height: "100%" }}>
+                <div className="card mx-3" style={{ width: "70%", borderRadius: "10px", height: "100%" }} id="subProfile2">
                     <h5 className="my-3 text-center">About me</h5>
                     <p className="text-center mx-3">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. 
