@@ -1,4 +1,5 @@
-import drJuice from "../JuiceWRLD.jpg"
+import React from "react";
+import drJuice from "../assets/JuiceWRLD.jpg"
 const Profile = () => {
 
     return (

@@ -127,7 +127,7 @@ const Signup = () => {
                                 />
                                <button type="submit" style={{width:'100%',marginTop:'2rem',paddingTop:'.5rem',paddingBottom:'.5rem'}}>Signup</button>
                             </form>
-                           <Link to='/login'><Typography variant="body1" color="initial" sx={{fontSize:'1.3rem', mt:1}}>Already have an account? Login</Typography></Link>
+                           <Link to='/login'  className='text-decoration-none'><Typography variant="body1" color="initial" sx={{fontSize:'1.3rem', mt:1}}>Already have an account? Login</Typography></Link>
 
                         </Grid>
         </Grid>

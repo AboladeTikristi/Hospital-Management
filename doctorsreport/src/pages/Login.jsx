@@ -103,7 +103,7 @@ const Login = () => {
                                <button type='submit' style={{width:'100%',marginTop:'2rem',paddingTop:'.5rem',paddingBottom:'.5rem'}}>Login</button>
                             </form>
                            <Typography variant="body1" color="initial" sx={{fontSize:'1.3rem', mt:1}}>Forgot password ?</Typography>
-                          <Link to='/signup'> <Typography variant="body1" color="initial" sx={{fontSize:'1.3rem', mt:1}}>Don't have an account? SignUp</Typography></Link>
+                          <Link to='/signup' className='text-decoration-none'> <Typography variant="body1" color="initial" sx={{fontSize:'1.3rem', mt:1}}>Don't have an account? SignUp</Typography></Link>
 
                         </Grid>
                     </Grid>
