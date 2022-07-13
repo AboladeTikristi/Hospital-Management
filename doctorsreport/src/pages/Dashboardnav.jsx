@@ -14,8 +14,7 @@ const Dashboardnav = () => {
 
     return (
         <>
-
-            <div className="d-flex  align-items-start w-100">
+            <div className="d-flex  align-items-start w-100" id="dashnav">
                 
                 <div className="nav flex-column nav-pills d-none d-md-flex shadow" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <div className="row mt-3">

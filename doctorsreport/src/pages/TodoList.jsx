@@ -3,6 +3,7 @@ import React, { useState } from "react"
 const Todo = () => {
     const [todo, setTodo] = useState([])
     const [entry, setEntry] = useState("")
+    const [task, setTask] = useState("")
     let list = { entry }
     let newList = [...todo, list]
     const makeEntry = () => {
@@ -14,6 +15,10 @@ const Todo = () => {
         todo.splice(i, 1)
         setTodo([...todo])
         localStorage.removeItem("todoList")
+    }
+
+    const completedTask = () => {
+
     }
 
     return (
@@ -32,14 +37,16 @@ const Todo = () => {
                                 <tr>
                                     <th scope="col">S/N</th>
                                     <th scope="col">Entry</th>
-                                    <th scope="col">Clear entry</th>
+                                    {/* <th scope="col">Completed</th> */}
+                                    <th scope="col">Delete entry</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>{i + 1}</td>
                                     <td>{item.entry}</td>
-                                    <td><button className="btn btn-success" onClick={() => clearList(i)}>Clear</button></td>
+                                    {/* <td><button className="btn btn-success">Completed</button></td> */}
+                                    <td><button className="btn btn-danger" onClick={() => clearList(i)}>Delete</button></td>
                                 </tr>
                             </tbody>
                         </table>

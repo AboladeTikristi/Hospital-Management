@@ -7,12 +7,43 @@
   width: 15%;
 }
 
+@media (max-width:700px) {
+  #v-pills-tab {
+      flex-direction: row !important;
+      height: 90px !important;
+      /* width: 100% !important; */
+      min-width: fit-content !important;
+  }
+  #v-pills-tabContent{
+    width: 100% !important;
+  }
+  #genNav{
+    margin-top: 10px !important;
+    width: 100% !important;
+  }
+
+ #dashnav{
+   flex-direction: column !important;
+   width: 100% !important;
+ }
+}
+
 /* Dashboard */
 #dashboardBody {
   height: 100vh;
 }
 #v-pills-tabContent{
   width: 85%;
+}
+@media (max-width:600px) {
+  #dashBody{
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  #dashCon {
+    width: 80% !important;
+  }
 }
 
 /* Appointments */
@@ -22,4 +53,29 @@
 }
 #flexCheckDefault{
   margin-left: 5px;
+}
+
+@media (max-width:600px) {
+  #appointDiv{
+    flex-direction: column !important;
+  }
+  #appointSubDiv{
+    width: 100% !important;
+  }
+}
+
+/* Profile */
+@media (max-width:600px) {
+ #mainProfile{
+   flex-direction: column !important;
+   overflow-y: scroll !important;
+ } 
+ #subProfile1 {
+   width: 100% !important;
+   height: 50% !important;
+ }
+ #subProfile2 {
+   width: 100% !important;
+   height: 50% !important;
+ }
 }
