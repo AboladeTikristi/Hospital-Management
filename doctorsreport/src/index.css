@@ -7,6 +7,26 @@
   width: 15%;
 }
 
+@media (max-width:700px) {
+  #v-pills-tab {
+      flex-direction: row !important;
+      height: 70px !important;
+      /* width: 100% !important; */
+      min-width: fit-content !important;
+  }
+  #v-pills-tabContent{
+    width: 100% !important;
+  }
+  #genNav{
+    width: 100% !important;
+  }
+
+ #dashnav{
+   flex-direction: column !important;
+   width: 100% !important;
+ }
+}
+
 /* Dashboard */
 #dashboardBody {
   height: 100vh;

@@ -4,13 +4,14 @@ import Appointments from "./Appointments"
 import Dashboard from "./Dashboard"
 import PatientsLabs from "./PatientsLabs"
 import Profile from "./Profile"
+import Settings from "./Settings"
 import Todo from "./TodoList"
 
 const Dashboardnav = () => {
 
     return (
         <>
-            <div className="d-flex align-items-start w-100">
+            <div className="d-flex align-items-start w-100" id="dashnav">
                 <div className="nav flex-column nav-pills shadow" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                     <button className="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
                     <button className="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
@@ -21,7 +22,7 @@ const Dashboardnav = () => {
 
                 </div>
                 <div className="tab-content" id="v-pills-tabContent">
-                    <nav className="navbar navbar-expand navbar-light bg-light w-100 shadow pb-2">
+                    <nav className="navbar navbar-expand navbar-light bg-light mx-2 shadow pb-2" id="genNav">
                         <div className="container-fluid">
                             <a className="navbar-brand">Welcome, Dr Who</a>
                             <form className="d-flex w-75">
@@ -51,7 +52,7 @@ const Dashboardnav = () => {
                     </div>
 
                     <div className="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-                        ...
+                        <Settings />
                     </div>
                 </div>
             </div>
