@@ -6,13 +6,24 @@ import reportWebVitals from './reportWebVitals';
 import "../node_modules/bootstrap/dist/css/bootstrap.css"
 import "../node_modules/bootstrap/dist/js/bootstrap.bundle"
 import { BrowserRouter } from 'react-router-dom'
+import {createStore} from 'redux';
+import {Provider} from 'react-redux'
+import allReducers from './reducers';
+// import counter from './reducers/counter'
+// import student from './reducers/student'
+let store=createStore(
+  allReducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-    <App />
-    </BrowserRouter>
+    
+      <BrowserRouter><Provider store={store}>
+      <App /></Provider>
+      </BrowserRouter>
+    
   </React.StrictMode>
 );
 

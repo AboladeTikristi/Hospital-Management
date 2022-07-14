@@ -49,7 +49,7 @@ const DoctorLogin = () => {
           localStorage.token = res.data.token
           setmessage(res.data.message)
           alert('login successful')
-          alert(`hey`)
+          navigate('/dashboard')
         }
       })
     },

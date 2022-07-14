@@ -79,4 +79,38 @@ const Login=(req,res)=>{
         }
         })
 }
-module.exports={Signup,Login}
+const allDoctors=(req,res)=>{
+    doctorModel.find((err,result)=>{
+        if (err) {
+            console.log(err)
+            console.log(`error`)
+            res.send({message:"user details stuck!",status:false})
+        }
+        else{
+            res.send({allUsers:result,status:true})
+           
+        }
+    })
+}
+const presentDoctor=(req,res)=>{
+    const token=req.headers.authorization.split(' ')[1]
+    jwt.verify(token,SECRET,(err,result)=>{
+        if (err) {
+            console.log(err)
+            res.send({status:false,message:'unauthorized'})
+        }
+        else{
+            doctorModel.findOne({email:result.email},(err,userDetails)=>{
+                if (err) {
+                    res.send({status:false,message:'internal server error'})
+                }
+                else{
+                    res.send({status:true,message:" still valid",userDetails})
+                }
+            })
+          
+            
+        }
+    })
+}
+module.exports={Signup,Login,allDoctors,presentDoctor}

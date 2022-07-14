@@ -16,8 +16,8 @@ const Dashboardnav = () => {
         <>
             <div className="d-flex  align-items-start w-100" id="dashnav">
                 
-                <div className="nav flex-column nav-pills d-none d-md-flex shadow" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                    <div className="row mt-3">
+                <div className="nav flex-column nav-pills  d-md-flex shadow" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    {/* <div className="row mt-3">
                         <div className="col-7 mx-auto">
                             <div className="row me-4">
                                 <div className="col-6">
@@ -29,8 +29,8 @@ const Dashboardnav = () => {
                             </div>
                         </div>
                     </div>
-                    
-                        <img className="h-25 border-light rounded shadow mt-5 border d-block mx-auto " src={pro} alt="" />
+                     */}
+                        {/* <img className="h-25 border-light rounded shadow mt-5 border d-block mx-auto " src={pro} alt="" /> */}
                   
                         <button className="nav-link mt-1 active mt-4" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
                         <button className="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>

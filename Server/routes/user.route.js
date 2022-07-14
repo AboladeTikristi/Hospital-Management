@@ -7,4 +7,6 @@ router.post('/signup',userController.Signup)
 router.post('/docsignup',doctorController.Signup)
 router.post('/login',userController.Login)
 router.post('/doclogin',doctorController.Login)
+router.get('/alldocs',doctorController.allDoctors)
+router.get('/doctor',doctorController.presentDoctor)
 module.exports=router

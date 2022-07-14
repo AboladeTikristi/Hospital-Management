@@ -8,8 +8,11 @@ import DoctorLogin from "./pages/DoctorLogin";
 import Dashboardnav from "./pages/Dashboardnav"
 import PatientBills from "./pages/PatientBills";
 import PatSettings from "./pages/PatSettings";
+import {useSelector,useDispatch} from 'react-redux'
+// import {increase,decrease} from './actions/index'
 
 function App() {
+  let dispatch = useDispatch()
   return (
     <>
     {/* <LandingPage/> */}
