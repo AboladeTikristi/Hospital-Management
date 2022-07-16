@@ -29,7 +29,7 @@ const Dashboard = () => {
             }
             else{
                 localStorage.removeItem('token')
-                navigate('/login')
+                navigate('/doclogin')
             }
             
         })
