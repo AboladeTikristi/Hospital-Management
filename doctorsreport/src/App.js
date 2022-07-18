@@ -13,10 +13,13 @@ import {useSelector,useDispatch} from 'react-redux'
 import Profile from "./pages/Profile";
 import Dashboard from "./pages/Dashboard";
 import PatientsLabs from "./pages/PatientsLabs";
+import PatientsDashboard from "./pages/PatientsDashboard";
 import Todo from "./pages/TodoList";
 import Appointments from "./pages/Appointments";
 import Settings from "./pages/Settings";
 import AdminDasboard from "./pages/AdminDashboard";
+import Chat from "./pages/Chat";
+import Patientpastappoint from "./pages/PatientAppointment";
 
 
 
@@ -30,21 +33,25 @@ function App() {
     <Routes>
       <Route path='/' element={<LandingPage/>}/>
       <Route path='/login' element={<Login/>}/>
-      <Route path='/doclogin' element={<DoctorLogin/>}/>
-      <Route path='/docsignup' element={<DoctorSignup/>}/>
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/patbills' element={<PatientBills/>}/>
       <Route path='/patsets' element={<PatSettings/>}/>
-      {/* <Route path="/dashboard" element={<Dashboardnav/>}/> */}
+      <Route path="/patdashboard" element={<PatientsDashboard/>} />
+      <Route path="/chat" element={<Chat/>} />
+      <Route path="/patappointments" element={<Patientpastappoint/>} />
+     
+
+      <Route path='/doclogin' element={<DoctorLogin/>}/>
+      <Route path='/docsignup' element={<DoctorSignup/>}/>
       <Route path="/dashboard" element={<Dashboardnav />}/>
       <Route path="/profile" element={<Profile/>} />
-      {/* <Route path="/dashboard" element={<Dashboard />} /> */}
       <Route path="/patientslabs" element={<PatientsLabs />} />
       <Route path="/todo" element={<Todo />} />
       <Route path="/appointments" element={<Appointments />} />
-      <Route path="/settings" element={<Settings />} />
+      <Route path="/patsettings" element={<PatSettings/>} />
 
       <Route path="/admindashboard" element={<AdminDasboard />} />
+    
 
 
     

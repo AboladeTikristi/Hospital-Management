@@ -5,6 +5,7 @@ const userSchema=mongoose.Schema({
     lastname:String,
     email:String,
     profile_picture:String,
+    patient_id:String,
     password:String,
 })
 

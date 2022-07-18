@@ -13,11 +13,13 @@ const LandingPage=(res,req)=>{
 }
 const Signup=(req,res)=>{
     const newUser=req.body;
+    var date=new Date()
     console.log(req.body)
     if (req.body!==""){
      const email=req.body.email;
      const username=req.body.username;
-    
+     newUser.patient_id= "PAT"+
+       date.getDate()+Math.floor(Math.random()*100)
     
     userModel.findOne({email:email},(err,result)=>{
             if (err) {

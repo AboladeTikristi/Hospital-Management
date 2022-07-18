@@ -25,7 +25,11 @@ const Signup = () => {
            firstname:'',
            lastname:'',
            email:'',
+           profile_picture:'',
+           patient_id:'',
            password:'',
+         
+
  
        },
        onSubmit:(values)=>{

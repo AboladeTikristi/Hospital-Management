@@ -11,125 +11,13 @@
 // import Profile from "./Profile"
 // import Todo from "./TodoList"
 
-// const Dashboardnav = () => {
-
-//     return (
-//         <>
-//             <div className="d-flex align-items-start w-100" id="dashnav">
-
-//                 responsive nav bar
-//                 <div className="navbar navbar-expand-md navbar-light bg-light shadow w-100" id="nav">
-//                     <div className="container-fluid">
-//                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-//                             <span className="navbar-toggler-icon"></span>
-//                         </button>
-//                         <div className="collapse navbar-collapse" id="navbarNav">
-//                             <ul className="navbar-nav">
-//                                 <li className="nav-item">
-//                                     <Link className="nav-link active" aria-current="page" to="/dashboard">Home</Link>
-//                                 </li>
-//                                 <li className="nav-item">
-//                                     <Link className="nav-link" to="/profile">Profile</Link>
-//                                 </li>
-//                                 <li className="nav-item">
-//                                     <Link className="nav-link" to="/patientslabs">Patients Records</Link>
-//                                 </li>
-//                                 <li className="nav-item">
-//                                     <Link className="nav-link" to="/todo">To-do List</Link>
-//                                 </li>
-//                                 <li className="nav-item">
-//                                     <Link className="nav-link" to="/appointments">Appointments</Link>
-//                                 </li>
-//                                 <li className="nav-item">
-//                                     <Link className="nav-link" to="/settings">Settings</Link>
-//                                 </li>
-//                             </ul>
-//                         </div>
-//                     </div>
-
-//                     <main className="w-100">
-//                         <div className="w-100">
-//                             <Dashboard />
-//                         </div>
-
-//                         <div className="w-100">
-//                             <Profile />
-//                         </div>
-
-//                         <div className="w-100">
-//                             <PatientsLabs />
-//                         </div>
-
-//                         <div className="w-100">
-//                             <Todo />
-//                         </div>
-
-//                         <div className="w-100">
-//                             <Appointments />
-//                         </div>
-
-//                         <div className="w-100">
-//                             <Settings />
-//                         </div>
-
-//                     </main>
-//                 </div>
 
 
-//                 <div className="nav flex-column nav-pills shadow" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-//                     <button className="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
-//                     <button className="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
-//                     <button className="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Patients records</button>
-//                     <button className="nav-link" id="v-pills-todo-tab" data-bs-toggle="pill" data-bs-target="#v-pills-todo" type="button" role="tab" aria-controls="v-pills-todo" aria-selected="false">To-do List</button>
-//                     <button className="nav-link" id="v-pills-appointments-tab" data-bs-toggle="pill" data-bs-target="#v-pills-appointments" type="button" role="tab" aria-controls="v-pills-appointments" aria-selected="false">Appointments</button>
-//                     <button className="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
 
-//                 </div>
-
-//                 <div className="tab-content" id="v-pills-tabContent">
-//                     <nav className="navbar navbar-expand navbar-light bg-light mx-2 shadow pb-2" id="genNav">
-//                         <div className="container-fluid">
-//                             <a className="navbar-brand">Welcome, Dr Who</a>
-//                             <form className="d-flex w-75">
-//                                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-//                                 <button className="btn btn-outline-primary" type="submit">Search</button>
-//                             </form>
-//                         </div>
-//                     </nav>
-//                     <div className="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-//                         <Dashboard />
-//                     </div>
-
-//                     <div className="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
-//                         <Profile />
-//                     </div>
-
-//                     <div className="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-//                         <PatientsLabs />
-//                     </div>
-
-//                     <div className="tab-pane fade" id="v-pills-todo" role="tabpanel" aria-labelledby="v-pills-todo-tab">
-//                         <Todo />
-//                     </div>
-
-//                     <div className="tab-pane fade" id="v-pills-appointments" role="tabpanel" aria-labelledby="v-pills-appointments-tab">
-//                         <Appointments />
-//                     </div>
-
-//                     <div className="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
-//                         <Settings />
-//                     </div>
-//                 </div>
-//             </div>
-
-
-//         </>
-//     )
-// }
-// export default Dashboardnav
-
-
-import React from 'react';
+import React,{useEffect,useState} from 'react';
+import {useNavigate} from 'react-router-dom'
+import {useSelector,useDispatch} from 'react-redux'
+import {allDoctors} from '../actions/index'
 import PropTypes from 'prop-types';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -141,12 +29,12 @@ import PatientsLabs from './PatientsLabs';
 import DoctorPatient from "./DoctorPatient"
 import Todo from './TodoList';
 import Appointments from './Appointments';
-import Settings from './Settings';
+import Settings from './PatSettings';
 import Calender from './Calender';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
-
+  
     return (
     //     <>
     //         <div className="d-flex  align-items-start w-100" id="dashnav">
@@ -247,9 +135,13 @@ function a11yProps(index) {
 
 export default function Dashboardnav() {
     const [value, setValue] = React.useState(0);
-
+    let dispatch = useDispatch()
+    let reduxState=useSelector(state=>state)
+    let reduxDoc=useSelector(state=>state.doctors.allDoctors)
+    const [userDetails, setuserDetails] = useState(reduxDoc)
     const handleChange = (event, newValue) => {
         setValue(newValue);
+    
     };
 
     return (
@@ -278,7 +170,7 @@ export default function Dashboardnav() {
             <div className="w-100">
                 <nav className="navbar navbar-expand navbar-light bg-light mx-2 shadow pb-2" id="genNav">
                     <div className="container-fluid">
-                        <a className="navbar-brand">Welcome, Dr Who</a>
+                        <a className="navbar-brand">Welcome, Dr {reduxDoc.lastname}</a>
                         <form className="d-flex w-75">
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                             <button className="btn btn-outline-primary" type="submit">Search</button>

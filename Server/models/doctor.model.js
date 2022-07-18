@@ -6,6 +6,11 @@ const doctorSchema=mongoose.Schema({
     username:String,
     email:String,
     profile_picture:String,
+    specialisation:String,
+    institution:String,
+    instituteAddress:String,
+    Patients:[],
+    Cases:[],
     password:String,
 })
 

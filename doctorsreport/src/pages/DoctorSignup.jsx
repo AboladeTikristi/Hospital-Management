@@ -25,6 +25,12 @@ const DoctorSignup = () => {
            lastname:'',
            email:'',
            password:'',
+           profile_picture:'',
+           specialisation:'',
+           institution:'',
+           instituteAddress:'',
+           Patients:[],
+           Cases:[],
         
        },
        onSubmit:(values)=>{
@@ -122,6 +128,48 @@ const DoctorSignup = () => {
                                     helperText={formik.touched.password?<span className="text-danger h6">{formik.errors.password}</span>:''}
                                     variant="standard"
                                     type="password"
+                                    sx={{width:'100%'}}
+                                    inputProps={{style: {fontSize: 20,color:'white'}}}
+                                    InputLabelProps={{style: {fontSize: 20,color:'white'}}}
+                                />
+                                <TextField
+                                    id="standard-error-helper-text"
+                                    onBlur={formik.handleBlur} 
+                                    name="specialisation"
+                                    onChange={formik.handleChange}
+                                    label="Specialisation"
+                                    defaultValue=""
+                                    helperText={formik.touched.specialisation?<span className="text-danger h6">{formik.errors.specialisation}</span>:''}
+                                    variant="standard"
+                                    type="text"
+                                    sx={{width:'100%'}}
+                                    inputProps={{style: {fontSize: 20,color:'white'}}}
+                                    InputLabelProps={{style: {fontSize: 20,color:'white'}}}
+                                />
+                                <TextField
+                                    id="standard-error-helper-text"
+                                    onBlur={formik.handleBlur} 
+                                    name="institution"
+                                    onChange={formik.handleChange}
+                                    label="Institution"
+                                    defaultValue=""
+                                    helperText={formik.touched.institution?<span className="text-danger h6">{formik.errors.institution}</span>:''}
+                                    variant="standard"
+                                    type="text"
+                                    sx={{width:'100%'}}
+                                    inputProps={{style: {fontSize: 20,color:'white'}}}
+                                    InputLabelProps={{style: {fontSize: 20,color:'white'}}}
+                                />
+                                <TextField
+                                    id="standard-error-helper-text"
+                                    onBlur={formik.handleBlur} 
+                                    name="instituteAddress"
+                                    onChange={formik.handleChange}
+                                    label="InstituteAddress"
+                                    defaultValue=""
+                                    helperText={formik.touched.instituteAddress?<span className="text-danger h6">{formik.errors.instituteAddress}</span>:''}
+                                    variant="standard"
+                                    type="text"
                                     sx={{width:'100%'}}
                                     inputProps={{style: {fontSize: 20,color:'white'}}}
                                     InputLabelProps={{style: {fontSize: 20,color:'white'}}}

@@ -1,14 +1,33 @@
 import React from 'react'
 import doc from '../assets/doct.jpg'
 import logo from '../assets/medicallogo.png'
+import {useNavigate} from 'react-router-dom'
+import axios from 'axios'
+import {useSelector,useDispatch} from 'react-redux'
+import {allDoctors} from '../actions/index'
 function DoctorPatient() {
+    const navigate=useNavigate()
+    // const token=localStorage.token
+    let dispatch = useDispatch()
+    let reduxState=useSelector(state=>state)
+    let reduxDoc=useSelector(state=>state.doctors.allDoctors)
   return (
     <>
           <div className="w-100 container-fluid" id="dashboardBody">
             <div className=" mt-4 w-100 ms-2 grid grid-cols-3 md:grid-cols-3 gap-4 h3 text-center text-uppercase">
                 <div className=""><hr /></div>
                 <div className="">Patients</div>
-                <div className=""><hr /></div></div>
+                <div className=""><hr /></div>
+            </div>
+                {reduxDoc.Patients.length===0?
+                <div className='text-center py-5  my-5'>
+                    <span className='text-center h2'>
+                    <i class="fa-solid fa-4x fa-user-slash mb-3"></i>
+                       <br />
+                        NO PATIENTS YET
+                    </span>
+                </div>:
+               
                 <div class="grid  grid-cols-1 md:grid-cols-3 gap-4">
                 <div className="card  shadow-sm">
                       <div class="row w-100 p-3">
@@ -140,11 +159,12 @@ function DoctorPatient() {
                         </div> 
                     </div>
                   
-                </div>
+                </div> 
+                }
                 <div className="d-flex ps-4 p-2 row mt-4 w-100 justify-content-center">
                    
                 </div>
-
+                
             </div>
     </>
   )
