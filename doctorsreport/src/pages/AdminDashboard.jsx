@@ -6,7 +6,8 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import PatientsList from './PatientsList';
 import Todo from './TodoList';
-import Calender from './Calender';
+import CalenderApp from "./CalenderApp"
+
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -86,7 +87,7 @@ export default function AdminDashboard() {
                     <Todo />
                 </TabPanel>
                 <TabPanel value={value} index={2}>
-                    <Calender />
+                    <CalenderApp />
                 </TabPanel>
                 <TabPanel value={value} index={3}>
                     Item Four

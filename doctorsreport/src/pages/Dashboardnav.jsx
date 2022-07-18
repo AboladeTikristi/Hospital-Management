@@ -30,7 +30,7 @@ import DoctorPatient from "./DoctorPatient"
 import Todo from './TodoList';
 import Appointments from './Appointments';
 import Settings from './PatSettings';
-import Calender from './Calender';
+import CalenderApp from "./CalenderApp"
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -196,7 +196,7 @@ export default function Dashboardnav() {
                     <Appointments />
                 </TabPanel>
                 <TabPanel value={value} index={6}>
-                    <Calender />
+                    <CalenderApp />
                 </TabPanel>
                 <TabPanel value={value} index={7}>
                     <Settings />
