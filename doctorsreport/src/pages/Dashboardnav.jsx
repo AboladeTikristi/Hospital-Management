@@ -137,8 +137,10 @@ import Profile from './Profile';
 import PatientsLabs from './PatientsLabs';
 import Todo from './TodoList';
 import Appointments from './Appointments';
-import Settings from './Settings';
+import SettingsApp from './SettingsApp';
 import CalenderApp from "./CalenderApp"
+import {Home, Person, Folder, Toc, CalendarViewMonth, Settings, CallToAction} from '@mui/icons-material';
+
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -192,17 +194,38 @@ export default function Dashboardnav() {
                 aria-label="Vertical tabs example"
                 sx={{ borderRight: 1, borderColor: 'divider' }}
                 style={{ height: "100vh", width: "20%" }}
-                id="adminNav"
+                id="drNav"
             >
-                <Tab label="Home" {...a11yProps(0)} />
-                <Tab label="Profile" {...a11yProps(1)} />
-                <Tab label="Patients Records" {...a11yProps(2)} />
-                <Tab label="To-do list" {...a11yProps(3)} />
-                <Tab label="Appointments" {...a11yProps(4)} />
-                <Tab label="Calender" {...a11yProps(5)} />
-                <Tab label="Settings" {...a11yProps(6)} />
+                <Tab icon={<Home fontSize="small" />} iconPosition="start"  label="Home" {...a11yProps(0)} />
+                <Tab icon={<Person fontSize="small"  />} iconPosition="start" label="Profile" {...a11yProps(1)} />
+                <Tab icon={<Folder  fontSize="small" />} iconPosition="start"   label="Patients Records" {...a11yProps(2)} />
+                <Tab icon={<Toc fontSize="small"  />} iconPosition="start" label="To-do list" {...a11yProps(3)} />
+                <Tab icon={<CalendarViewMonth  fontSize="small" />} iconPosition="start" label="Appointments" {...a11yProps(4)} />
+                <Tab icon={<CallToAction fontSize="small"  />} iconPosition="start"  label="Calender" {...a11yProps(5)} />
+                <Tab icon={<Settings fontSize="small"  />} iconPosition="start" label="Settings" {...a11yProps(6)} />
             </Tabs>
-            <div className="w-100">
+
+            <Tabs
+                orientation="vertical"
+                // variant="scrollable"
+                value={value}
+                onChange={handleChange}
+                aria-label="Vertical tabs example"
+                sx={{ borderRight: 1, borderColor: 'divider' }}
+                style={{ height: "100vh" }}
+                id="drNav2"
+            >
+                <Tab style={{width:"100%"}} id="resTab" icon={<Home fontSize="small" />} iconPosition="start" {...a11yProps(0)} />
+                <Tab style={{width:"100%"}} id="resTab" icon={<Person fontSize="small" />} iconPosition="start" {...a11yProps(1)} />
+                <Tab style={{width:"100%"}} id="resTab" icon={<Folder fontSize="small" />} iconPosition="start"  {...a11yProps(2)} />
+                <Tab style={{width:"100%"}} id="resTab" icon={<Toc fontSize="small" />} iconPosition="start"  {...a11yProps(3)} />
+                <Tab style={{width:"100%"}} id="resTab" icon={<CalendarViewMonth fontSize="small" />} iconPosition="start"  {...a11yProps(4)} />
+                <Tab style={{width:"100%"}} id="resTab" icon={<CallToAction fontSize="small" />} iconPosition="start"   {...a11yProps(5)} />
+                <Tab style={{width:"100%"}} id="resTab" icon={<Settings fontSize="small" />} iconPosition="start" {...a11yProps(6)} />
+            </Tabs>
+
+
+            <div className="w-100" id="navDiv">
                 <nav className="navbar navbar-expand navbar-light bg-light mx-2 shadow pb-2" id="genNav">
                     <div className="container-fluid">
                         <a className="navbar-brand">Welcome, Dr Who</a>
@@ -212,27 +235,29 @@ export default function Dashboardnav() {
                         </form>
                     </div>
                 </nav>
-                <TabPanel value={value} index={0}>
-                    <Dashboard />
-                </TabPanel>
-                <TabPanel value={value} index={1}>
-                    <Profile />
-                </TabPanel>
-                <TabPanel value={value} index={2}>
-                    <PatientsLabs />
-                </TabPanel>
-                <TabPanel value={value} index={3}>
-                    <Todo />
-                </TabPanel>
-                <TabPanel value={value} index={4}>
-                    <Appointments />
-                </TabPanel>
-                <TabPanel value={value} index={5}>
-                    <CalenderApp />
-                </TabPanel>
-                <TabPanel value={value} index={6}>
-                    <Settings />
-                </TabPanel>
+                <div>
+                    <TabPanel value={value} index={0}>
+                        <Dashboard />
+                    </TabPanel>
+                    <TabPanel value={value} index={1}>
+                        <Profile />
+                    </TabPanel>
+                    <TabPanel value={value} index={2}>
+                        <PatientsLabs />
+                    </TabPanel>
+                    <TabPanel value={value} index={3}>
+                        <Todo />
+                    </TabPanel>
+                    <TabPanel value={value} index={4}>
+                        <Appointments />
+                    </TabPanel>
+                    <TabPanel value={value} index={5}>
+                        <CalenderApp />
+                    </TabPanel>
+                    <TabPanel value={value} index={6}>
+                        <SettingsApp />
+                    </TabPanel>
+                </div>
             </div>
         </Box>
     );

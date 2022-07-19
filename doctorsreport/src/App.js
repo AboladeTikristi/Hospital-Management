@@ -9,7 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import PatientsLabs from "./pages/PatientsLabs";
 import Todo from "./pages/TodoList";
 import Appointments from "./pages/Appointments";
-import Settings from "./pages/Settings";
+import SettingsApp from "./pages/SettingsApp";
 import AdminDasboard from "./pages/AdminDashboard";
 
 
@@ -30,7 +30,7 @@ function App() {
       <Route path="/patientslabs" element={<PatientsLabs />} />
       <Route path="/todo" element={<Todo />} />
       <Route path="/appointments" element={<Appointments />} />
-      <Route path="/settings" element={<Settings />} />
+      <Route path="/settings" element={<SettingsApp />} />
 
       <Route path="/admindashboard" element={<AdminDasboard />} />
 
