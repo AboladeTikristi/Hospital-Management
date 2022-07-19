@@ -1,5 +1,8 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { AppBar, Avatar, Box, Toolbar, Typography } from '@mui/material'
+import {useNavigate} from 'react-router-dom'
+import {useSelector,useDispatch} from 'react-redux'
+import {PresentPatient} from '../actions/index'
 import logo from '../assets/medicallogo.png'
 import DocumentScannerIcon from '@mui/icons-material/DocumentScanner';
 import NotificationsActiveIcon from '@mui/icons-material/NotificationsActive';
@@ -7,6 +10,9 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import Drawer from './Drawer';
 
 const PatientsNavbar = () => {
+    let reduxState=useSelector(state=>state)
+    let reduxPat=useSelector(state=>state.users.PresentPatient)
+    const [userDetails, setuserDetails] = useState(reduxPat)
     return (
         <>
             <AppBar sx={{ backgroundColor: 'white' }}>
@@ -23,7 +29,7 @@ const PatientsNavbar = () => {
                         <NotificationsActiveIcon sx={{ color: 'rgb(54,58,98)', fontWeight: 500, fontSize: '2.5rem', mr: { sm: '3rem', md: '2rem' } }} />
                         <LocationOnIcon sx={{ color: 'rgb(54,58,98)', fontWeight: 500, fontSize: '2.5rem', mr: { sm: '3rem', md: '2rem' } }} />
                         <Typography variant="body1" color="initial" sx={{ fontWeight: 500, fontSize: { sm: '1rem', md: '1.4rem' }, mr: { sm: '3rem', md: '2rem' } }}>
-                            Ella Jones
+                            {reduxPat.firstname} {reduxPat.lastname}
                         </Typography>
                         <Avatar />
                     </Box>

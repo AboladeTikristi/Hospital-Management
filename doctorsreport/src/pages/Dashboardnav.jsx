@@ -137,7 +137,7 @@ export default function Dashboardnav() {
     const [value, setValue] = React.useState(0);
     let dispatch = useDispatch()
     let reduxState=useSelector(state=>state)
-    let reduxDoc=useSelector(state=>state.doctors.allDoctors)
+    let reduxDoc=useSelector(state=>state.users.allDoctors)
     const [userDetails, setuserDetails] = useState(reduxDoc)
     const handleChange = (event, newValue) => {
         setValue(newValue);

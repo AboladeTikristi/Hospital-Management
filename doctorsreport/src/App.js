@@ -20,6 +20,9 @@ import Settings from "./pages/Settings";
 import AdminDasboard from "./pages/AdminDashboard";
 import Chat from "./pages/Chat";
 import Patientpastappoint from "./pages/PatientAppointment";
+import ForgetPassword from "./pages/ForgetPassword";
+import EmailSent from "./pages/EmailSent";
+import PasswordReset from "./pages/PasswordReset";
 
 
 
@@ -39,7 +42,12 @@ function App() {
       <Route path="/patdashboard" element={<PatientsDashboard/>} />
       <Route path="/chat" element={<Chat/>} />
       <Route path="/patappointments" element={<Patientpastappoint/>} />
-     
+      <Route path="/patsettings" element={<Settings/>} />
+
+      <Route path="/forgetpassword" element={<ForgetPassword/>} />
+      <Route path="/sendemail" element={<EmailSent/>} />
+      <Route path="/resetpassword" element={<PasswordReset/>} />
+      
 
       <Route path='/doclogin' element={<DoctorLogin/>}/>
       <Route path='/docsignup' element={<DoctorSignup/>}/>
@@ -48,7 +56,7 @@ function App() {
       <Route path="/patientslabs" element={<PatientsLabs />} />
       <Route path="/todo" element={<Todo />} />
       <Route path="/appointments" element={<Appointments />} />
-      <Route path="/patsettings" element={<PatSettings/>} />
+      <Route path="/settings" element={<PatSettings/>} />
 
       <Route path="/admindashboard" element={<AdminDasboard />} />
     

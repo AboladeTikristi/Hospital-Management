@@ -42,6 +42,7 @@ const Signup = () => {
                      setstatus(true)
                      if (res.data.status===true) {
                         setstatus(true)
+                        alert("Signed up successfully")
                         navigate('/login')
                      }
                      else{

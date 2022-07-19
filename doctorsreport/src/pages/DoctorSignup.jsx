@@ -44,6 +44,7 @@ const DoctorSignup = () => {
                      setstatus(true)
                      if (res.data.status===true) {
                         setstatus(true)
+                        alert("Signed up successfully")
                         navigate('/doclogin')
                      }
                      else{

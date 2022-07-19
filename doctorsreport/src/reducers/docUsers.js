@@ -1,5 +1,6 @@
 const initState={
     allDoctors:{},
+    PresentPatient:{},
     count:0,
     name:"hey",
     arr:[
@@ -18,6 +19,15 @@ const counter=(state=initState,action)=>{
         }
         
     }
+    else if (action.type=="KEEP") {
+        return {
+            // to retai  previous citizens of the state
+            ...state,
+            PresentPatient:action.payload
+        }
+        
+    }
+
     // else if(action.type=="DECREASE"){
     //     return{
     //         // to retai  previous citizens of the state

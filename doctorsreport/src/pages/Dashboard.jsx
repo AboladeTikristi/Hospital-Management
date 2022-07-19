@@ -11,7 +11,7 @@ const Dashboard = () => {
     const token=localStorage.token
     let dispatch = useDispatch()
     let reduxState=useSelector(state=>state)
-    let reduxCount=useSelector(state=>state.doctors.allDoctors)
+    let reduxCount=useSelector(state=>state.users.allDoctors)
     const [userDetails, setuserDetails] = useState('')
 //    console.log(reduxCount)
     const [count, setcount] = useState("")

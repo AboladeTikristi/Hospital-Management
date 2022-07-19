@@ -1,5 +1,5 @@
 import { Box, Grid, styled, Typography } from '@mui/material'
-import React from 'react'
+import React,{useState} from 'react'
 import { NavLink } from 'react-router-dom'
 import hero from '../assets/d3.jpg'
 import InputLabel from '@mui/material/InputLabel';
@@ -7,6 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import DashboardCustomizeIcon from '@mui/icons-material/DashboardCustomize';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
@@ -16,7 +17,9 @@ import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import ChatIcon from '@mui/icons-material/Chat';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
-
+import {useNavigate} from 'react-router-dom'
+import {useSelector,useDispatch} from 'react-redux'
+import {PresentPatient} from '../actions/index'
 const LI = styled('li')({
     listStyleType: 'none',
     width:'100%'
@@ -31,15 +34,24 @@ const Mystyle = styled(NavLink)({
 })
 
 const LeftBar = () => {
+    let reduxState=useSelector(state=>state)
+    let reduxPat=useSelector(state=>state.users.PresentPatient)
+    const [userDetails, setuserDetails] = useState(reduxPat)
     return (
         <>
             <Grid container sx={{ border: 1, borderColor: '#efefef',height:'65rem'}}>
-                <Grid item lg={12} sx={{ pt: { sm: "1rem", md: '3rem' }, pb: { sm: "1rem", md: '3rem' }, display: 'grid', alignItems: 'center', justifyContent: 'center',position:'fixed',left:'6.7vw' }}>
+                <Grid item lg={12} sx={{ pt: { sm: "1rem", md: '3rem' }, pb: { sm: "1rem", md: '3rem' }, display: 'grid', alignItems: 'center', justifyContent: 'center',position:'fixed',left:'4.7vw' }}>
                     <Box sx={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
-                        <Box component='img' src={hero} sx={{ width: '60px', height: '70px', border: 1, borderRadius: '1rem' }} />
-                    </Box>
+                        {
+                            reduxPat.profile_picture==""?
+                            // <i class="fa-solid fa-3x fa-hospital-user" sx={{ width: '60px', height: '70px', border: 1, borderRadius: '1rem' }}></i>
+                            <AccountBoxIcon sx={{ color: 'rgb(54,58,98)', fontWeight: 500, fontSize: '3.5rem' ,}} />
+                            // <Box component='img' src={hero} />
+                            :<Box component='img' src={hero} sx={{ width: '60px', height: '70px', border: 1, borderRadius: '1rem' }}/>
+                        }
+                        </Box>
                     <Typography variant="body1" color="initial" sx={{ display: 'flex', justifyContent: 'center', width: '100%', fontWeight: 500, fontSize: { sm: '1rem', md: '1.5rem' }, mt: { sm: '.5rem', md: '1rem' } }}>
-                        Ella Jones
+                        {reduxPat.firstname} {reduxPat.lastname}
                     </Typography>
                     <Typography variant="body1" color="initial" sx={{ display: 'flex', justifyContent: 'center', width: '100%', fontWeight: 500, fontSize: { sm: '1rem', md: '1.1rem' } }}>
                         Patient
@@ -49,7 +61,7 @@ const LeftBar = () => {
                     <Typography variant="body1" color="initial" sx={{ fontWeight: 500, fontSize: { sm: '1rem', md: '1.4rem' },ml:2 }}>
                         Main
                     </Typography>
-                    <Mystyle to="" style={{ textDecoration: "none", color: 'black', display: 'flex', alignItems: 'center' }} sx={{mt:1.3}}>
+                    <Mystyle to="/patdashboard" style={{ textDecoration: "none", color: 'black', display: 'flex', alignItems: 'center' }} sx={{mt:1.3}}>
                         <DashboardCustomizeIcon sx={{ color: 'rgb(54,58,98)', fontWeight: 500, fontSize: '2.5rem' ,ml:1}} />
                         <LI sx={{ p: '1.1rem' }}>Dashboard</LI>
                     </Mystyle>

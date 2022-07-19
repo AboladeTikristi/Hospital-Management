@@ -6,4 +6,11 @@ const allDoctors =(num)=>{
         payload:num
     }
 }
-export{allDoctors}
+const PresentPatient=(here)=>{
+    // returns compulsorily an object
+    return{
+        type:"KEEP",
+        payload:here
+    }
+}
+export{allDoctors,PresentPatient}
