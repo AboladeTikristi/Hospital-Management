@@ -11,6 +11,8 @@ import Todo from "./pages/TodoList";
 import Appointments from "./pages/Appointments";
 import SettingsApp from "./pages/SettingsApp";
 import AdminDasboard from "./pages/AdminDashboard";
+import PatientsList from "./pages/PatientsList"
+import Calender from "./pages/CalenderApp"
 
 
 
@@ -31,6 +33,8 @@ function App() {
       <Route path="/todo" element={<Todo />} />
       <Route path="/appointments" element={<Appointments />} />
       <Route path="/settings" element={<SettingsApp />} />
+      <Route path="/patientslist" element={<PatientsList />} />
+      <Route path="/calender" element={<Calender />}/>
 
       <Route path="/admindashboard" element={<AdminDasboard />} />
 

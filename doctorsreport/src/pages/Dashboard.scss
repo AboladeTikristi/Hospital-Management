@@ -1,0 +1,11 @@
+
+@media (max-width:900px) {
+    #graphDiv {
+      flex-direction: column-reverse !important;
+      align-items: center;
+      justify-content: center;
+      #graphDiv1{
+          width: 50% !important;
+      }
+    }
+  } 

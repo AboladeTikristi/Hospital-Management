@@ -1,0 +1,14 @@
+
+#dashBar{
+    display: flex;
+
+    #dashContainer {
+        flex: 6;
+    }
+}
+
+@media (max-width:900px) {
+ #dashContainer{
+     overflow-y: scroll !important;
+ }   
+}
