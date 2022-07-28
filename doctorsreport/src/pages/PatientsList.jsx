@@ -18,7 +18,7 @@ const PatientsList = () => {
                         </div>
                     </nav>
                     <div className="w-100">
-                        <h5 className="text-center my-2">Welcome Admin</h5>
+                        <h5 className="text-center my-2"></h5>
                         <div className="w-100 card" id="appointSubDiv">
                             <h6 className="text-center">These are the list of patients in the hospital</h6>
                             <table className="table">

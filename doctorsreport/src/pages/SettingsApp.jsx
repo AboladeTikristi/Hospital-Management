@@ -21,11 +21,7 @@ const SettingsApp = () => {
                             </form>
                         </div>
                     </nav>
-                    {/* <Head>
-                <title>
-                    Settings | Material Kit
-                </title>
-            </Head> */}
+
                     <main className="w-100 card my-2 overflow-scroll" style={{ height: "80vh" }}>
                         <Box
                             component="main"

@@ -13,6 +13,11 @@ import SettingsApp from "./pages/SettingsApp";
 import AdminDasboard from "./pages/AdminDashboard";
 import PatientsList from "./pages/PatientsList"
 import Calender from "./pages/CalenderApp"
+import AdminAppointments from "./pages/AdminAppointments";
+import AdminPatients from "./pages/AdminPatients";
+import AdminCalender from "./pages/AdminCalender";
+import AdminTodo from "./pages/AdminTodo";
+import AdminSettings from "./pages/AdminSettings";
 
 
 
@@ -37,6 +42,12 @@ function App() {
       <Route path="/calender" element={<Calender />}/>
 
       <Route path="/admindashboard" element={<AdminDasboard />} />
+      <Route path="/adminappointment" element={<AdminAppointments />} />
+      <Route path="/adminpatient" element={<AdminPatients />} />
+      <Route path="/admincalender" element={<AdminCalender />}/>
+      <Route path="/admintodo" element={<AdminTodo />} />
+      <Route path="/adminsettings" element={<AdminSettings />} />
+
 
 
     
